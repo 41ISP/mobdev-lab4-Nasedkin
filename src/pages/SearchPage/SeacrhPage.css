@@ -1,0 +1,18 @@
+.temperatureText{
+    font-size: xx-large;
+}
+.btn{
+    border-color: black;
+    border-radius: 15px;
+    border-width: 2px;
+    margin: 10px;
+}
+.inp{
+    border-width: 2px;
+    border-color: black;
+    font-size: larger;
+}
+.container{
+    
+    text-align: center;
+}
