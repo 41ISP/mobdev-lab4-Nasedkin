@@ -12,7 +12,8 @@ const weatherRequest = {
                 withCredentials: false,
                 params:{
                     apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG",
-                    q: cityName
+                    q: cityName,
+                    language: "ru-ru"
                 }
             })
             return response.data
@@ -22,7 +23,8 @@ const weatherRequest = {
                 withCredentials: false,
                 params:{
                     apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG",
-                    metric: true
+                    metric: true,
+                    language: "ru-ru"
                 }
             })
             return response.data

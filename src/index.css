@@ -28,7 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  /* background-image: url(""); */
+  background-image: url("https://news-ru.gismeteo.st/2021/12/shutterstock_240459751-scaled.jpg"); 
+  background-size: 100%;
 }
 
 h1 {

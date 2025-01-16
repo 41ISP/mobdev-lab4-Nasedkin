@@ -24,12 +24,14 @@ const SearchPage = () => {
 
     return (
         <div className="container">
+            <div className="cntr">
             <img className="icon" src={icon} alt="тут будет иконка погоды"/>
             <p className="wtype">{wType}</p>
-            <p className="temperatureText">Temperature: {temp} °C</p>
-            <p>Coordinates: {cords}</p>
+            <p className="temperatureText">Температура: {temp} °C</p>
+            <p className="cords">Координаты: {cords}</p>
             <input className="inp" type="text" onChange={handleChange} value={city}/>
-            <button className="btn" onClick={handleClick}>Click</button>
+            <button className="btn" onClick={handleClick}>Search</button>
+            </div>
         </div>
     )
 }

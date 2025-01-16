@@ -11,6 +11,12 @@
     border-width: 2px;
     border-color: black;
     font-size: larger;
+    color: black;
+    background: rgba(230, 228, 131, .75);
+    text-align: center;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    border-radius: 15px;
 }
 .container{
     display: flex;
@@ -18,19 +24,39 @@
     gap: 10px;
     width: 100vw;
     height: 100vh;
+    color: black;
+    font-weight: bolder;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     align-items: center;
     justify-content: center;
     text-align: center;
+
 }
 .icon{
     width: 200px;
     height: 200px;
-    border-color: black;
-    border-width: 2px;
     border-radius: 100px;
     background-color: black;
 }
 .wtype{
-    font-size: large;
-    font-weight: bolder;
+    font-size: x-large;
+    
+}
+.cntr{
+    background: rgba(226, 243, 250, .75);
+    width: 25vw;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 100px;
+    border: 5px solid black
+}
+.cords{
+    
+    font-size: medium;
 }
