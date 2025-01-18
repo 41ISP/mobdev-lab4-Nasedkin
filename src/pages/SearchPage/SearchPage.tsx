@@ -40,11 +40,16 @@ const SearchPage = () => {
         <div className="container">
             <div className="cntr">
                 <form className="form" onSubmit={handleSubmit} action="">
-                    <img className="icon" src={icon} alt="тут будет иконка погоды"/>
-                    <p className="wtype">{wType}</p>
-                    <p className="temperatureText">Температура: {temp} °C</p>
-                    <p className="wind">Ветер: {wind} км/ч</p>
-                    <p className="pressure">Давление: {pressure} мм рт.ст.</p>
+                        <img className="iconBig" src={icon} alt="Погода"/>
+                        <p className="textBig">{wType}</p>
+                    <div className="weatherIcons">
+                        <img className="icon" src="https://static.tildacdn.com/tild3863-6237-4836-b635-323930613138/noun_1065028.png" alt="Температура" />
+                        <img className="icon"src="https://cdn4.iconfinder.com/data/icons/weather-meteorology-1/32/weather-wind-1024.png" alt="Ветер" />
+                        <img className="icon" src="https://fcar-rus.ru/wa-data/public/shop/catimg2/10/image/chestirenka_4.png" alt="Давление" />
+                        <p className="text">Температура: {temp} °C</p>
+                        <p className="text">Ветер: {wind} км/ч</p>
+                        <p className="text">Давление: {pressure} мм рт.ст.</p>
+                    </div>
                     <input placeholder="Введите название города" className="inp" type="text" onChange={handleChange} value={city}/>
                     <button className="btn">Поиск</button>
                 </form>

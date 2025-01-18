@@ -1,22 +1,30 @@
-.temperatureText{
-    font-size: medium;
+.text{
+    font-size: large;
+}
+.textBig{
+    font-size: xx-large;
 }
 .btn{
     border-color: black;
     border-radius: 10px;
     border-width: 2px;
-    font-size: larger;
+    font-size: x-large;
+    background-color: lavender;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     margin-left: 5px;
 }
 .inp{
     border-width: 2px;
     border-color: black;
-    font-size: larger;
-    color: black;
+    font-size: x-large;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
     background: rgba(230, 228, 131, .75);
     text-align: center;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     border-radius: 15px;
 }
 .container{
@@ -25,27 +33,32 @@
     gap: 10px;
     width: 100vw;
     height: 100vh;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: bolder;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     align-items: center;
     justify-content: center;
     text-align: center;
 
 }
 .icon{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    background-color: lavender;
+    border: solid black;
+}
+.iconBig{
     width: 150px;
     height: 150px;
     border-radius: 100px;
-    background-color: black;
+    background-color: lavender;
+    border: solid black;
 }
-.wtype{
-    font-size: x-large;
-    
-}
+
 .cntr{
-    background: rgba(226, 243, 250, .75);
+    background: rgba(23, 52, 63, 0.75);
     width: 35vw;
     height: 60vh;
     align-items: center;
@@ -57,10 +70,7 @@
     border-radius: 100px;
     border: 5px solid black
 }
-.wind{
-    
-    font-size: medium;
-}
+
 .form{
     align-items: center;
     justify-content: center;
@@ -68,4 +78,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.weatherIcons{
+    display: grid;
+    grid-template-columns: 15vh 15vh 15vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    place-items: center;
+    font-size: larger;
 }
