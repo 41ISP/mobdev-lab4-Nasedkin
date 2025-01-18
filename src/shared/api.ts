@@ -19,14 +19,15 @@ const weatherRequest = {
             return response.data
         },
         weatherReq: async(cityKey: string) =>{
-            const response = await axiosWeatherInstance.get<ITemperature[]>("forecasts/v1/hourly/1hour/"+cityKey,{
+            const response = await axiosWeatherInstance.get<ITemperature[]>("currentconditions/v1/"+cityKey,{
                 withCredentials: false,
                 params:{
                     apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG",
-                    metric: true,
-                    language: "ru-ru"
+                    language: "ru-ru",
+                    details: true
                 }
             })
+            console.log(response.data)
             return response.data
         }
         

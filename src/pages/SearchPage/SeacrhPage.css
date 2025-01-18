@@ -1,11 +1,12 @@
 .temperatureText{
-    font-size: xx-large;
+    font-size: medium;
 }
 .btn{
     border-color: black;
-    border-radius: 15px;
+    border-radius: 10px;
     border-width: 2px;
-    margin: 10px;
+    font-size: larger;
+    margin-left: 5px;
 }
 .inp{
     border-width: 2px;
@@ -34,8 +35,8 @@
 
 }
 .icon{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 100px;
     background-color: black;
 }
@@ -45,7 +46,7 @@
 }
 .cntr{
     background: rgba(226, 243, 250, .75);
-    width: 25vw;
+    width: 35vw;
     height: 60vh;
     align-items: center;
     justify-content: center;
@@ -56,7 +57,15 @@
     border-radius: 100px;
     border: 5px solid black
 }
-.cords{
+.wind{
     
     font-size: medium;
+}
+.form{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

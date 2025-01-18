@@ -6,31 +6,48 @@ const SearchPage = () => {
 
     const [city, setCity] = useState('')
     const [icon, setIcon] = useState('')
-    const [cords, setCords] = useState('')
+    const [wind, setWind] = useState('')
     const [wType, setwType] = useState('')
+    const [pressure, setPressure] = useState('')
     const [temp, setTemp] = useState<undefined|number>(undefined)
     const handleChange = (e: { target: { value: SetStateAction<string> } }) =>{
         setCity(e.target.value)
     }
 
-    const handleClick = async () =>{
-        const cityKey = (await weatherRequest.cityReq(city))[0].Key
-        setTemp((await weatherRequest.weatherReq(cityKey))[0].Temperature.Value)
-        const pic = (await weatherRequest.weatherReq(cityKey))[0].WeatherIcon.toString()
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
+        e.preventDefault()
+
+        const cityRes = (await weatherRequest.cityReq(city))
+
+        if (cityRes.length < 1) return
+
+        const cityKey = cityRes[0].Key
+        const weatherRes = (await weatherRequest.weatherReq(cityKey))
+
+        setTemp(weatherRes[0].Temperature.Metric.Value)
+        
+        const pic = weatherRes[0].WeatherIcon.toString()
         setIcon("https://developer.accuweather.com/sites/default/files/"+pic.padStart(2,'0')+"-s.png")
-        setCords((await weatherRequest.cityReq(city))[0].GeoPosition.Latitude.toString() + ", " + (await weatherRequest.cityReq(city))[0].GeoPosition.Longitude.toString())
-        setwType((await weatherRequest.weatherReq(cityKey))[0].IconPhrase.toString().toUpperCase())
+        
+        setWind(weatherRes[0].Wind.Speed.Metric.Value.toString())
+        
+        setwType(weatherRes[0].WeatherText.toString().toUpperCase())
+
+        setPressure(weatherRes[0].Pressure.Metric.Value.toString())
     }
 
     return (
         <div className="container">
             <div className="cntr">
-            <img className="icon" src={icon} alt="тут будет иконка погоды"/>
-            <p className="wtype">{wType}</p>
-            <p className="temperatureText">Температура: {temp} °C</p>
-            <p className="cords">Координаты: {cords}</p>
-            <input className="inp" type="text" onChange={handleChange} value={city}/>
-            <button className="btn" onClick={handleClick}>Search</button>
+                <form className="form" onSubmit={handleSubmit} action="">
+                    <img className="icon" src={icon} alt="тут будет иконка погоды"/>
+                    <p className="wtype">{wType}</p>
+                    <p className="temperatureText">Температура: {temp} °C</p>
+                    <p className="wind">Ветер: {wind} км/ч</p>
+                    <p className="pressure">Давление: {pressure} мм рт.ст.</p>
+                    <input placeholder="Введите название города" className="inp" type="text" onChange={handleChange} value={city}/>
+                    <button className="btn">Поиск</button>
+                </form>
             </div>
         </div>
     )
