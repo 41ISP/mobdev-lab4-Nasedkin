@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ICityRDO } from "../entities/city";
-import { ITemperature, Temperature } from "../entities/temperature";
+import { ITemperature } from "../entities/temperature";
+import { IForecast } from "../entities/forecast";
 
 const axiosWeatherInstance = axios.create({
     baseURL: "https://dataservice.accuweather.com/"
@@ -29,8 +30,15 @@ const weatherRequest = {
             })
             console.log(response.data)
             return response.data
+        },
+        forecastReq: async(cityKey: string) =>{
+            const response = await axiosWeatherInstance.get<IForecast[]>("forecasts/v1/daily/5day/"+cityKey,{
+                params:{
+                    apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG"
+                }
+            })
+            console.log(response.data)
         }
-        
     }
 
 

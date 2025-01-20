@@ -1,9 +1,11 @@
 import { SetStateAction, useState } from "react"
 import weatherRequest from "../../shared/api"
 import "./SeacrhPage.css"
+import { useNavigate } from "react-router-dom"
 
 const SearchPage = () => {
 
+    const navigate = useNavigate()
     const [city, setCity] = useState('')
     const [icon, setIcon] = useState('')
     const [wind, setWind] = useState('')
@@ -36,6 +38,10 @@ const SearchPage = () => {
         setPressure(weatherRes[0].Pressure.Metric.Value.toString())
     }
 
+    const handleNavigate = () => {
+        navigate("ForecastPage")
+    }
+
     return (
         <div className="container">
             <div className="cntr">
@@ -52,6 +58,7 @@ const SearchPage = () => {
                     </div>
                     <input placeholder="Введите название города" className="inp" type="text" onChange={handleChange} value={city}/>
                     <button className="btn">Поиск</button>
+                    <button className="btn" onClick={handleNavigate}>Прогноз на 5 дней</button>
                 </form>
             </div>
         </div>
