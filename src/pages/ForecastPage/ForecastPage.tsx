@@ -2,15 +2,13 @@ import { useNavigate } from "react-router-dom"
 import "./ForecastPage.css"
 import weatherRequest from "../../shared/api"
 import { SetStateAction, useState } from "react"
+import { IForecast } from "../../entities/forecast"
 
 const ForecastPage = () => {
 
     const [city, setCity] = useState('')
-    const [day1, setDay1] = useState('')
-    const [day2, setDay2] = useState('')
-    const [day3, setDay3] = useState('')
-    const [day4, setDay4] = useState('')
-    const [day5, setDay5] = useState('')
+    const [forecast, setForecast] = useState<IForecast | undefined>(undefined)
+
     const navigate = useNavigate()
 
     const handleNavigate = () => {
@@ -29,9 +27,31 @@ const ForecastPage = () => {
         if (cityRes.length < 1) return
 
         const cityKey = cityRes[0].Key
-        const forecastRes = (await weatherRequest.forecastReq(cityKey))
+        setForecast(await weatherRequest.forecastReq(cityKey))
+
+
+        // console.log(map1)
+
+        // setDay1(forecastRes.DailyForecasts[0].Date)
+        // setDay2(forecastRes.DailyForecasts[1].Date)
+        // setDay3(forecastRes.DailyForecasts[2].Date)
+        // setDay4(forecastRes.DailyForecasts[3].Date)
+        // setDay5(forecastRes.DailyForecasts[4].Date)
+
+        // setWeather1("Макс. температура: " + forecastRes.DailyForecasts[0].Temperature.Maximum.Value.toString() +
+        // + "Мин. температура: " +  forecastRes.DailyForecasts[0].Temperature.Minimum.Value.toString())
+
+        // setWeather2("Макс. температура: " + forecastRes.DailyForecasts[1].Temperature.Maximum.Value.toString() +
+        // + "Мин. температура: " +  forecastRes.DailyForecasts[1].Temperature.Minimum.Value.toString())
+       
+        // setWeather3("Макс. температура: " + forecastRes.DailyForecasts[2].Temperature.Maximum.Value.toString() +
+        // + "Мин. температура: " +  forecastRes.DailyForecasts[2].Temperature.Minimum.Value.toString())
+       
+        // setWeather4("Макс. температура: " + forecastRes.DailyForecasts[3].Temperature.Maximum.Value.toString() +
+        // + "Мин. температура: " +  forecastRes.DailyForecasts[3].Temperature.Minimum.Value.toString())
         
-        setDay1(forecastRes.)
+        // setWeather5("Макс. температура: " + forecastRes.DailyForecasts[4].Temperature.Maximum.Value.toString() +
+        // + "Мин. температура: " +  forecastRes.DailyForecasts[4].Temperature.Minimum.Value.toString())
     }
 
 
@@ -40,19 +60,26 @@ const ForecastPage = () => {
         <div className="cntr2">
             <form action="" className="form" onSubmit={handleSubmit}> 
                 <div className="weatherInfo">
-                        <p>{day1}</p>
-                        <p>{day2}</p>
-                        <p>{day3}</p>
-                        <p>{day4}</p>
-                        <p>{day5}</p>
+                    {forecast &&        forecast.DailyForecasts.map((el)=> (
+                        <p className="text2">{el.Date}</p>
 
-                        <p>Weather:</p>
-                        <p>Weather:</p>
-                        <p>Weather:</p>
-                        <p>Weather:</p>
-                        <p>Weather:</p>
+                    ))
+                    }
+                    {forecast &&        forecast.DailyForecasts.map((el)=> (
+                        <p  className="text2">Макс:  {el.Temperature.Maximum.Value}°C <br/>
+                        Мин:  {el.Temperature.Minimum.Value}°C</p>
+                    ))
+                    }
+
+{/* 
+{}
+                        <p>Weather: {weather[0] && (`Макс. температура: ${weather[0].}`)}</p>
+                        <p>Weather: {weather2}</p>
+                        <p>Weather: {weather3}</p>
+                        <p>Weather: {weather4}</p>
+                        <p>Weather: {weather5}</p> */} 
                 </div>
-                    <input className="inp" onChange={handleChange} type="text" value={city}/>
+                    <input placeholder="Введите название города" className="inp" onChange={handleChange} type="text" value={city}/>
                     <button className="btn">Поиск</button>
                     <button className="btn" onClick={handleNavigate}>Прогноз на данный момент</button>
                 </form>

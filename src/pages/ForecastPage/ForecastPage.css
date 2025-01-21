@@ -16,9 +16,9 @@
 }
 .cntr2{
     background: rgba(23, 52, 63, 0.75);
-    min-width: 75vw;
+    min-width: 85vw;
     min-height: 60vh;
-    max-width: 75vw;
+    max-width: 85vw;
     max-height: 60vh;
     align-items: center;
     justify-content: center;
@@ -37,4 +37,7 @@
     text-align: center;
     place-items: center;
     font-size: larger;
+}
+.text2{
+    font-size: medium;
 }

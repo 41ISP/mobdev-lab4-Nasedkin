@@ -32,12 +32,15 @@ const weatherRequest = {
             return response.data
         },
         forecastReq: async(cityKey: string) =>{
-            const response = await axiosWeatherInstance.get<IForecast[]>("forecasts/v1/daily/5day/"+cityKey,{
+            const response = await axiosWeatherInstance.get<IForecast>("forecasts/v1/daily/5day/"+cityKey,{
+                withCredentials: false,
                 params:{
-                    apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG"
+                    apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG",
+                    metric: true
                 }
             })
             console.log(response.data)
+            return response.data
         }
     }
 
