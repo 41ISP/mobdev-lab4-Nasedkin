@@ -42,7 +42,7 @@ const ForecastPage = () => {
                     {forecast &&        forecast.DailyForecasts.map((el)=> (
                         <div key={nanoid()}>
                             <img className="icon" src={"https://developer.accuweather.com/sites/default/files/"+el.Day.Icon.toString().padStart(2,'0')+"-s.png"} alt="Иконка погоды" />
-                            <p className="text2">{el.Date.substring(5, 10).replace('-', '.')}</p>
+                            <p className="text3">{el.Date.substring(5, 10).replace('-', '.')}</p>
                             <p className="text2">{el.Day.IconPhrase}</p>
                         </div>
 
