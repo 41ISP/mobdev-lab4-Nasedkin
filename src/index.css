@@ -52,6 +52,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 100vw;
+  
   min-height: 100vh;
   background-image: url("https://avatars.mds.yandex.net/i?id=82df1ea8f3ff7fb944f8d83ba400f5ec_l-9156331-images-thumbs&n=13"); 
   background-size: cover;

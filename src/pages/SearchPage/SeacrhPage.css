@@ -19,7 +19,7 @@
     border-width: 2px;
     border-color: black;
     font-size: x-large;
-    margin-top: 50px;
+    margin-top: 25px;
     color: rgb(255, 255, 255);
     background: rgba(230, 228, 131, .75);
     text-align: center;
@@ -45,15 +45,13 @@
 
 }
 .icon{
-    width: 75px;
-    height: 75px;
+    height: 70px;
     border-radius: 100px;
-    background-color: lavender;
+    background-color: rgb(109, 109, 119);
     border: solid black;
 }
 .iconBig{
-    width: 150px;
-    height: 150px;
+    height: 125px;
     border-radius: 100px;
     background-color: lavender;
     border: solid black;

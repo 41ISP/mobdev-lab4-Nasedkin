@@ -16,9 +16,9 @@
 }
 .cntr2{
     background: rgba(23, 52, 63, 0.75);
-    min-width: 85vw;
+    min-width: 90vw;
     min-height: 60vh;
-    max-width: 85vw;
+    max-width: 90vw;
     max-height: 60vh;
     align-items: center;
     justify-content: center;
@@ -32,12 +32,14 @@
 .weatherInfo{
     display: grid;
     grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    place-items: center;
+    align-items: top, center;
+    justify-content: top, center;
+    text-align: top, center;
+    place-items: top, center;
     font-size: larger;
+    
+    gap: 15px;
 }
 .text2{
-    font-size: medium;
+    font-size:small;
 }

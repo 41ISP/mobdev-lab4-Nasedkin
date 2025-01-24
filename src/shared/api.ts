@@ -36,7 +36,8 @@ const weatherRequest = {
                 withCredentials: false,
                 params:{
                     apikey: "UWJ38WTrCqzQ1YM3cakTy9tTY9TInnIG",
-                    metric: true
+                    metric: true,
+                    language: "ru-ru"
                 }
             })
             console.log(response.data)
