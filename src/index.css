@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,8 +53,12 @@ body {
   display: flex;
   place-items: center;
   min-width: 100vw;
-  
+  font-family: "Bona Nova SC";
   min-height: 100vh;
   background-image: url("https://avatars.mds.yandex.net/i?id=82df1ea8f3ff7fb944f8d83ba400f5ec_l-9156331-images-thumbs&n=13"); 
   background-size: cover;
+}
+
+* {
+	font-family: "Bona Nova SC";
 }

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 .container2{
     display: flex;
     flex-direction: column;
@@ -7,7 +11,6 @@
     min-height: 100vh;
     min-width: 100vw;
     color: rgb(255, 255, 255);
-    font-weight: bolder;
     text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
                1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     align-items: center;
@@ -16,10 +19,10 @@
 }
 .cntr2{
     background: rgba(23, 52, 63, 0.75);
-    min-width: 90vw;
-    min-height: 60vh;
-    max-width: 90vw;
-    max-height: 60vh;
+    min-width: 85vw;
+    min-height: 70vh;
+    max-width: 85vw;
+    max-height: 70vh;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -41,5 +44,11 @@
     gap: 15px;
 }
 .text2{
-    font-size:small;
+    font-size: medium;
+}
+* {
+	font-family: "Bona Nova SC";
+}
+.text3{
+    font-size: x-large;
 }

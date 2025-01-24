@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 .text{
     font-size: large;
 }
@@ -5,18 +9,20 @@
     font-size: xx-large;
 }
 .btn{
-    border-color: black;
+    border: solid black;
     border-radius: 10px;
     border-width: 2px;
     font-size: x-large;
+    cursor: hand;
     background-color: lavender;
-    color: rgb(255, 255, 255);
+    color: rgb(154, 92, 179);
     text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
                1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     margin-left: 5px;
 }
 .inp{
     border-width: 2px;
+    width: 30vw;
     border-color: black;
     font-size: x-large;
     margin-top: 25px;
@@ -45,7 +51,7 @@
 
 }
 .icon{
-    height: 70px;
+    height: 80px;
     border-radius: 100px;
     background-color: rgb(109, 109, 119);
     border: solid black;
@@ -89,4 +95,7 @@
     text-align: center;
     place-items: center;
     font-size: larger;
+}
+* {
+	font-family: "Bona Nova SC";
 }

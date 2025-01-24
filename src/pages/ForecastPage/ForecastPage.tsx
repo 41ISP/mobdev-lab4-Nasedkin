@@ -54,7 +54,7 @@ const ForecastPage = () => {
                     ))
                     }
                 </div>
-                    <p >{forecast?.Headline.Text}</p>
+                    <p className="text3">{forecast?.Headline.Text}</p>
                     <input placeholder="Введите название города" className="inp" onChange={handleChange} type="text" value={city}/>
                     <button className="btn">Поиск</button>
                     <button className="btn" onClick={handleNavigate}>Прогноз на данный момент</button>
